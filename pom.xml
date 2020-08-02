@@ -26,6 +26,24 @@
         <awaitility.version>3.1.6</awaitility.version>
     </properties>
 
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/gpl.txt</url>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Spring Framework Guru</name>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>John Thompson</name>
+            <organization>Spring Framework Guru</organization>
+        </developer>
+    </developers>
+
 
     <dependencyManagement>
         <dependencies>
@@ -148,6 +166,7 @@
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
                         </path>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -174,15 +193,16 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <!--3.6.0 or higher-->
                                     <version>[3.6.0,)</version>
+                                    <message>maven version 3.6.0 or higher</message>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
                                     <version>11</version>
+                                    <message>java 11 is required</message>
                                 </requireJavaVersion>
                                 <requireReleaseDeps>
                                     <onlyWhenRelease>true</onlyWhenRelease>
-                                    <message>Must build base on release not a snapshot</message>
+                                    <message>Release builds must not have on snapshot dependencies</message>
                                 </requireReleaseDeps>
                             </rules>
                         </configuration>
